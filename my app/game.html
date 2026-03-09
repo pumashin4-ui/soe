@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #171a1b;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-container {
+            background-color: #f1b398;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game-image {
+            max-width: 100vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4b39ef;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #3d2dd1;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="inner-container">
+            <img src="../static/images/homepage.png" alt="Game Image" class="game-image">
+            <button class="back-button" onclick="window.location.href='index.html'">Back</button>
+        </div>
+    </div>
+</body>
+</html>
