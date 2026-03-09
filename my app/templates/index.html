@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            background-image: url("../static/images/main.png");
+            background-size: contain;  
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #171a1b; 
+        }
+
+        .play-button {
+            width: 250px;              
+            height: 90px;              
+           border-radius: 8px;        
+            font-size: 45px;           
+            font-weight: bold;
+            color: #fff;
+            background-color:#4b39ef; 
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: #4b39ef; 
+        }
+    </style>
+</head>
+<body>
+    <!-- PLAY button -->
+    <button class="play-button" onclick="window.location.href='game.html'">
+        PLAY
+
+        <link rel="stylesheet" href="../static/style.css">
+
+    </button>
+</body>
+</html>
+
+
