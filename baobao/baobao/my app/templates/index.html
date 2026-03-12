@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            background-image: url("../static/images/main.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #171a1b;
+        }
+
+        .play-button {
+            width: 180px;
+            height: 60px;
+            border-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #4b39ef;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .play-button:hover {
+            background-color: #3d2dd1;
+            transform: scale(1.05);
+        }
+
+        .play-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Tablet (768px and above) */
+        @media (min-width: 768px) {
+            .play-button {
+                width: 220px;
+                height: 70px;
+                font-size: 28px;
+            }
+        }
+
+        /* Desktop (1024px and above) */
+        @media (min-width: 1024px) {
+            .play-button {
+                width: 250px;
+                height: 90px;
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="play-button" onclick="window.location.href='game.html'">
+        PLAY
+    </button>
+</body>
+</html>

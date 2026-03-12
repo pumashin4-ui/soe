@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #171a1b;
+        }
+
+        .game-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .inner-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 40px;
+            color: #333;
+            cursor: pointer;
+            z-index: 2;
+            padding: 10px;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        .settings-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            background-color: #f1b398;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            padding: 25px;
+            gap: 15px;
+        }
+
+        .settings-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 300px;
+            gap: 15px;
+        }
+
+        .settings-item p {
+            margin: 0;
+            font-style: italic;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .toggle-button {
+            padding: 8px 16px;
+            font-size: 12px;
+            background-color: #4b39ef;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex: 1;
+            max-width: 70px;
+        }
+
+        .toggle-button:hover {
+            background-color: #3d2dd1;
+        }
+
+        /* Tablet (768px and above) */
+        @media (min-width: 768px) {
+            .close-button {
+                top: 30px;
+                left: 30px;
+                font-size: 50px;
+            }
+
+            .settings-container {
+                max-width: 550px;
+                padding: 30px;
+                gap: 20px;
+            }
+
+            .settings-item {
+                max-width: 350px;
+            }
+
+            .settings-item p {
+                font-size: 16px;
+            }
+
+            .toggle-button {
+                font-size: 14px;
+                max-width: 80px;
+                padding: 10px 16px;
+            }
+        }
+
+        /* Desktop (1024px and above) */
+        @media (min-width: 1024px) {
+            .close-button {
+                top: 30px;
+                left: 30px;
+                font-size: 70px;
+            }
+
+            .settings-container {
+                max-width: 600px;
+                padding: 35px;
+                gap: 20px;
+            }
+
+            .settings-item {
+                max-width: 400px;
+            }
+
+            .settings-item p {
+                font-size: 18px;
+            }
+
+            .toggle-button {
+                font-size: 14px;
+                max-width: 100px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="inner-container">
+            <img src="../static/images/profile.png" alt="Settings Image" class="game-image">
+            <button class="close-button" onclick="window.location.href='home.html'">×</button>
+            <div class="settings-container">
+                <div class="settings-item">
+                    <p>Notifications</p>
+                    <button class="toggle-button">On</button>
+                    <button class="toggle-button">Off</button>
+                </div>
+                <div class="settings-item">
+                    <p>Sounds</p>
+                    <button class="toggle-button">On</button>
+                    <button class="toggle-button">Off</button>
+                </div>
+                <div class="settings-item">
+                    <p>Music</p>
+                    <button class="toggle-button">On</button>
+                    <button class="toggle-button">Off</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

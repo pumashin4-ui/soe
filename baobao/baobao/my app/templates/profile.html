@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #171a1b;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .game-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .inner-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+            z-index: 2;
+            padding: 10px;
+        }
+
+        .back-button:hover {
+            color: #000;
+        }
+
+        .profile-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 550px;
+            height: auto;
+            background-color: #f1b398;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #333;
+        }
+
+        .username-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .username-input {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 180px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .username-input[readonly] {
+            background-color: #f5f5f5;
+            cursor: not-allowed;
+        }
+
+        .edit-icon {
+            font-size: 16px;
+            color: #4b39ef;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-icon:hover {
+            background-color: rgba(75, 57, 239, 0.1);
+        }
+
+        .save-button {
+            padding: 6px 12px;
+            font-size: 14px;
+            background-color: #4b39ef;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .save-button:hover {
+            background-color: #3d2dd1;
+        }
+
+        .picture-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            width: 100%;
+            height: 300px;
+            padding: 0;
+        }
+
+        .grid-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Tablet (768px and above) */
+        @media (min-width: 768px) {
+            .back-button {
+                top: 30px;
+                left: 30px;
+                font-size: 40px;
+            }
+
+            .profile-container {
+                max-width: 600px;
+                padding: 25px;
+            }
+
+            .profile-avatar {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+
+            .username-input {
+                width: 200px;
+                font-size: 16px;
+                padding: 10px 12px;
+            }
+
+            .edit-icon {
+                font-size: 20px;
+            }
+
+            .picture-grid {
+                gap: 15px;
+                height: 350px;
+            }
+        }
+
+        /* Desktop (1024px and above) */
+        @media (min-width: 1024px) {
+            .back-button {
+                top: 30px;
+                left: 30px;
+                font-size: 40px;
+            }
+
+            .profile-container {
+                max-width: 650px;
+                padding: 30px;
+            }
+
+            .profile-avatar {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+
+            .username-input {
+                width: 220px;
+                font-size: 16px;
+            }
+
+            .picture-grid {
+                gap: 15px;
+                height: 380px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="inner-container">
+            <img src="../static/images/profile.png" alt="Profile Image" class="game-image">
+            <button class="back-button" onclick="window.location.href='home.html'">←</button>
+            <div class="profile-container">
+                <img id="profile-avatar" src="../static/images/a1.png" alt="Profile Avatar" class="profile-avatar">
+                <div class="username-section">
+                    <input type="text" id="username-input" class="username-input" readonly>
+                    <span class="edit-icon" onclick="toggleEdit()">✏️</span>
+                    <button id="save-username" class="save-button" onclick="saveUsername()">Save</button>
+                </div>
+                <div class="picture-grid">
+                    <img src="../static/images/a1.png" alt="Picture 1" class="grid-item">
+                    <img src="../static/images/a2.png" alt="Picture 2" class="grid-item">
+                    <img src="../static/images/a3.png" alt="Picture 3" class="grid-item">
+                    <img src="../static/images/a4.png" alt="Picture 4" class="grid-item">
+                    <img src="../static/images/a5.png" alt="Picture 5" class="grid-item">
+                    <img src="../static/images/a6.png" alt="Picture 6" class="grid-item">
+                    <img src="../static/images/a7.png" alt="Picture 7" class="grid-item">
+                    <img src="../static/images/a8.png" alt="Picture 8" class="grid-item">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/profile.js"></script>
+</body>
+</html>
